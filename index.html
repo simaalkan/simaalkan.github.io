@@ -90,20 +90,79 @@
     .theme-toggle:hover {
       background: #8e44ad;
     }
+
+    /* Yeni profil resmi üst kısmı ve büyük yuvarlak foto */
+    .profile-top {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .profile-pic-large {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    .profile-pic-large:hover {
+      transform: scale(1.05);
+    }
+
+    /* Sosyal ikonlar kutusu */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+      font-size: 28px;
+    }
+
+    /* Basit ikon stili (FontAwesome kullanılabilir veya SVG ikon) */
+    .social-links a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #8e44ad;
+    }
   </style>
+
+  <!-- FontAwesome CDN ikonları için -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+  <div class="profile-top">
+    <img src="https://github.com/simaalkan.png" alt="Sima Alkan Profile" class="profile-pic-large" />
+  </div>
 
   <button class="theme-toggle" onclick="toggleTheme()" id="themeToggleBtn">🌙 Dark Mode</button>
 
   <h1>Hello, I'm Sima 👋</h1>
   <p>I'm a QA Engineer & Business Analyst with 3+ years of experience.</p>
   <p>💼 <strong>Tools:</strong> Cypress · Postman · SQL · Jira · Jenkins · Git</p>
-  <p>🔗 
-    <a href="https://www.linkedin.com/in/sima-alkan/">LinkedIn</a> | 
-    <a href="mailto:simaalkan96@gmail.com">Email</a> | 
-    <a href="https://medium.com/@simaalkan">Medium</a>
-  </p>
+
+  <div class="social-links" aria-label="Social Media Links">
+    <a href="https://github.com/simaalkan" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/sima-alkan/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="mailto:simaalkan96@gmail.com" aria-label="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://medium.com/@simaalkan" target="_blank" aria-label="Medium" rel="noopener noreferrer">
+      <i class="fab fa-medium"></i>
+    </a>
+  </div>
 
   <h2>➤ Web & Mobile Applications (B2C & B2B)</h2>
   <p>SDLC & STLC & CI/CD | Agile & Scrum</p>
