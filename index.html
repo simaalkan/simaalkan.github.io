@@ -129,25 +129,34 @@
 
     /* Basit ikon stili (FontAwesome kullanılabilir veya SVG ikon) */
 
-    .social-links a:hover {
-      color: #001f3f;
-    }
-
-    .social-links {
-      margin-top: 15px;
-      text-align: center;
-   }
-
     .social-links a {
       margin: 0 10px;
       color: var(--accent);
       font-size: 24px;
       transition: color 0.3s ease;
     }
-
-    .dark-mode .social-links a i {
-      color: #ffffff; /* Dark mode */
+  
+    .social-links a:hover {
+      color: #001f3f;
     }
+  
+    .dark-mode .social-links a {
+      color: var(--accent-dark);
+    }
+  
+    .dark-mode .social-links a:hover {
+      color: #a0c4ff;
+    }
+  
+    .highlight-text {
+      color: black;
+      font-weight: 500;
+    }
+  
+    .dark-mode .highlight-text {
+      color: white;
+    }
+
 
     /* Yeni header alanı */
     header.intro-header {
@@ -168,15 +177,6 @@
     header.intro-header p {
       margin: 6px 0;
       font-size: 1.1rem;
-    }
-
-    .highlight-text {
-      color: #001f3f; /* Light mode */
-      font-weight: 500;
-    }
-
-    .dark-mode .highlight-text {
-      color: #ffffff; /* Dark mode */
     }
     
   </style>
@@ -203,7 +203,7 @@
       <img src="https://github.com/simaalkan.png" alt="Sima Alkan Profile" class="profile-pic-large" />
     </div>
     <h1>Sima Alkan Suğur | Business Analyst & QA Engineer </h1>
-    <p> 3+ years of experience | Web & Mobile Applications (B2C & B2B) | SDLC & STLC & CI/CD | Agile & Scrum</p>
+    <p class="highlight-text">3+ years of experience | Web & Mobile Applications (B2C & B2B) | SDLC & STLC & CI/CD | Agile & Scrum</p>
     <div class="social-links">
       <a href="https://github.com/simaalkan" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/sima-alkan/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
