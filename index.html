@@ -10,11 +10,13 @@
       --text-light: #2e2e2e;
       --bg-dark: #2d2d2d;
       --text-dark: #f5f5f5;
-      --accent: #003366;
+      --accent: #003366;        /* Light mode header color */
+      --accent-dark: #4dabf7;   /* Dark mode header color */
       --tag-bg-light: #e6e6fa;
       --tag-bg-dark: #4b4b4b;
 
-      --header-bg: #f4e8ff; /* yeni header arkaplan rengi */
+      --header-bg: rgba(0, 51, 102, 0.07);          /* Light mode header background */
+      --header-bg-dark: rgba(255, 255, 255, 0.05);  /* Dark mode header background */
       --header-text: #6a3d8c;
     }
 
@@ -27,8 +29,15 @@
       transition: all 0.3s ease;
     }
 
-    h1, h2 {
+    h1, h2, a {
       color: var(--accent);
+      transition: color 0.3s ease;
+    }
+
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode a {
+      color: var(--accent-dark);
     }
 
     h1 {
@@ -136,7 +145,6 @@
       transition: color 0.3s ease;
     }
 
-
     /* Yeni header alanı */
     header.intro-header {
       background-color: var(--header-bg);
@@ -146,6 +154,11 @@
       border-radius: 15px;
       margin-bottom: 40px;
       box-shadow: 0 3px 8px rgba(155, 89, 182, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .dark-mode header.intro-header {
+      background-color: var(--header-bg-dark);
     }
 
     header.intro-header p {
@@ -196,7 +209,7 @@
   </header>
 
   <h2>➤ Work Permit Granted in Poland - Karta Pobytu </h2>
-  <p> <li>Currently seeking new opportunities to leverage my expertise in analyzing business requirements and ensuring the quality of software products in collaboration with cross-functional teams.</li> </p>
+  <p><li>Based in Gdańsk, currently seeking new opportunities to leverage my expertise in analyzing business requirements and ensuring the quality of software products in collaboration with cross-functional teams.</li></p>
 
   <h2>➤ Core BA Skills</h2>
   <ul>
