@@ -13,6 +13,9 @@
       --accent: #9b59b6;
       --tag-bg-light: #e6e6fa;
       --tag-bg-dark: #4b4b4b;
+
+      --header-bg: #f4e8ff; /* yeni header arkaplan rengi */
+      --header-text: #6a3d8c;
     }
 
     body {
@@ -91,7 +94,7 @@
       background: #8e44ad;
     }
 
-    /* Yeni profil resmi üst kısmı ve büyük yuvarlak foto */
+    /* Profil resmi üst kısmı ve büyük yuvarlak foto */
     .profile-top {
       display: flex;
       justify-content: center;
@@ -132,6 +135,22 @@
     .social-links a:hover {
       color: #8e44ad;
     }
+
+    /* Yeni header alanı */
+    header.intro-header {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      box-shadow: 0 3px 8px rgba(155, 89, 182, 0.2);
+    }
+
+    header.intro-header p {
+      margin: 6px 0;
+      font-size: 1.1rem;
+    }
   </style>
 
   <!-- FontAwesome CDN ikonları için -->
@@ -145,24 +164,24 @@
 
   <button class="theme-toggle" onclick="toggleTheme()" id="themeToggleBtn">🌙 Dark Mode</button>
 
-  <h1>Hello, I'm Sima 👋</h1>
-  <p>I'm a QA Engineer & Business Analyst with 3+ years of experience.</p>
-  <p>💼 <strong>Tools:</strong> Cypress · Postman · SQL · Jira · Jenkins · Git</p>
-
-  <div class="social-links" aria-label="Social Media Links">
-    <a href="https://github.com/simaalkan" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
-      <i class="fab fa-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/sima-alkan/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="mailto:simaalkan96@gmail.com" aria-label="Email">
-      <i class="fas fa-envelope"></i>
-    </a>
-    <a href="https://medium.com/@simaalkan" target="_blank" aria-label="Medium" rel="noopener noreferrer">
-      <i class="fab fa-medium"></i>
-    </a>
-  </div>
+  <header class="intro-header" aria-label="Introduction and social links">
+    <h1>Sima Alkan Suğur</h1>
+    <p>Business Analyst & QA Engineer with 3+ years of experience</p>
+    <div class="social-links" aria-label="Social Media Links">
+      <a href="https://github.com/simaalkan" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/sima-alkan/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:simaalkan96@gmail.com" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://medium.com/@simaalkan" target="_blank" aria-label="Medium" rel="noopener noreferrer">
+        <i class="fab fa-medium"></i>
+      </a>
+    </div>
+  </header>
 
   <h2>➤ Web & Mobile Applications (B2C & B2B)</h2>
   <p>SDLC & STLC & CI/CD | Agile & Scrum</p>
