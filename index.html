@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sima Alkan Suğur | BA & QA Engineer</title>
+  <style>
+    :root {
+      --bg-light: #fefefe;
+      --text-light: #2e2e2e;
+      --bg-dark: #2d2d2d;
+      --text-dark: #f5f5f5;
+      --accent: #9b59b6;
+      --tag-bg-light: #e6e6fa;
+      --tag-bg-dark: #4b4b4b;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 40px;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+
+    h1, h2 {
+      color: var(--accent);
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .tools span {
+      background: var(--tag-bg-light);
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.85em;
+    }
+
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .dark-mode .tools span {
+      background: var(--tag-bg-dark);
+      color: var(--text-dark);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: #8e44ad;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeToggleBtn">🌙 Dark Mode</button>
+
+  <h1>Hello, I'm Sima 👋</h1>
+  <p>I'm a QA Engineer & Business Analyst with 3+ years of experience.</p>
+  <p>💼 <strong>Tools:</strong> Cypress · Postman · SQL · Jira · Jenkins · Git</p>
+  <p>🔗 
+    <a href="https://www.linkedin.com/in/sima-alkan/">LinkedIn</a> | 
+    <a href="mailto:simaalkan96@gmail.com">Email</a> | 
+    <a href="https://medium.com/@simaalkan">Medium</a>
+  </p>
+
+  <h2>➤ Web & Mobile Applications (B2C & B2B)</h2>
+  <p>SDLC & STLC & CI/CD | Agile & Scrum</p>
+
+  <h2>➤ Core BA Skills</h2>
+  <ul>
+    <li>Requirements Gathering & Needs Analysis, BRD, FRD, FSD</li>
+    <li>Use Cases, User Stories (Gherkin), Acceptance Criteria</li>
+    <li>Product Backlog Management, Epics / Stories / Change Requests</li>
+    <li>UX & UI Analysis (Wireframes & Mockups)</li>
+    <li>Stakeholder Management, Customer Support</li>
+    <li>BPMN & UML (Use Case, Class, Activity Diagrams)</li>
+    <li>Root Cause & Risk & Impact Analysis</li>
+  </ul>
+
+  <h2>➤ Core QA Skills</h2>
+  <ul>
+    <li>Test Case Planning, Design & Execution (Gherkin Syntax)</li>
+    <li>Bug Reporting & Defect Management</li>
+    <li>Automation with Cypress (BDD, Cucumber)</li>
+    <li>Manual Testing: Web & Mobile (iOS/Android)</li>
+    <li>Functional Testing: REST API | Regression | Smoke | UAT | System | UI | Integration</li>
+    <li>API Testing: Auth · CRUD · JSON/XML · Third Party (AWS, Azure, SAP)</li>
+    <li>Non-Functional Testing: UX, Load, Performance, Error Handling</li>
+    <li>Version Control & CI/CD: Git, Jenkins, Sourcetree, Bitbucket</li>
+    <li>Cross-Browser & Risk-Based Testing</li>
+    <li>SQL & T-SQL · Data Prep · Log Tracking</li>
+  </ul>
+
+  <h2>➤ Industries & Project Domains</h2>
+  <ul>
+    <li>CMS Web Apps & Native Mobile (iOS/Android)</li>
+    <li>FMCG: Job Scheduler, .NET Reporting Tools</li>
+    <li>Banking: Corebanking Systems, CRM, Dashboards</li>
+  </ul>
+
+  <h2>➤ Tools & Technologies</h2>
+  <div class="tools">
+    <span>Jira</span><span>Xray</span><span>Confluence</span><span>Swagger</span><span>Postman</span>
+    <span>MS SQL Server</span><span>Figma</span><span>Cypress</span><span>VS Code</span><span>Git</span>
+    <span>Sourcetree</span><span>Jenkins</span><span>Bitbucket</span><span>Firebase</span><span>Power BI</span>
+    <span>Google Analytics</span><span>BlazeMeter</span><span>Taurus</span><span>Charles Proxy</span>
+    <span>LogMeIn</span><span>Kibana</span><span>JMeter</span><span>Tableau</span><span>Eclipse</span>
+    <span>IntelliJ IDEA</span><span>Appium</span><span>Selenium</span><span>Xcode</span>
+    <span>Android Studio</span><span>JavaScript</span><span>Java</span><span>Python</span>
+    <span>API Documentation</span><span>Traceability Matrix</span>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.getElementById("themeToggleBtn");
+      const isDark = document.body.classList.contains("dark-mode");
+      btn.innerHTML = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+    }
+  </script>
+
+</body>
+</html>
