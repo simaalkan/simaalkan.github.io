@@ -130,7 +130,7 @@
     /* Basit ikon stili (FontAwesome kullanılabilir veya SVG ikon) */
 
     .social-links a:hover {
-      color: #8e44ad;
+      color: #001f3f;
     }
 
     .social-links {
@@ -143,6 +143,10 @@
       color: var(--accent);
       font-size: 24px;
       transition: color 0.3s ease;
+    }
+
+    .dark-mode .social-links a i {
+      color: #ffffff; /* Dark mode */
     }
 
     /* Yeni header alanı */
@@ -176,7 +180,7 @@
     }
     
   </style>
-
+  
   <!-- FontAwesome CDN ikonları için -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
@@ -188,33 +192,23 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-
   
 </head>
 <body>
 
-  <div class="profile-top">
-    <img src="https://github.com/simaalkan.png" alt="Sima Alkan Profile" class="profile-pic-large" />
-  </div>
-
   <button class="theme-toggle" onclick="toggleTheme()" id="themeToggleBtn">🌙 Dark Mode</button>
 
   <header class="intro-header" aria-label="Introduction and social links">
+    <div class="profile-top">
+      <img src="https://github.com/simaalkan.png" alt="Sima Alkan Profile" class="profile-pic-large" />
+    </div>
     <h1>Sima Alkan Suğur | Business Analyst & QA Engineer </h1>
     <p> 3+ years of experience | Web & Mobile Applications (B2C & B2B) | SDLC & STLC & CI/CD | Agile & Scrum</p>
-    <div class="social-links" aria-label="Social Media Links">
-      <a href="https://github.com/simaalkan" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/sima-alkan/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="mailto:simaalkan96@gmail.com" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="https://medium.com/@simaalkan" target="_blank" aria-label="Medium" rel="noopener noreferrer">
-        <i class="fab fa-medium"></i>
-      </a>
+    <div class="social-links">
+      <a href="https://github.com/simaalkan" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/sima-alkan/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:simaalkan96@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://medium.com/@simaalkan" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
     </div>
   </header>
 
