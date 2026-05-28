@@ -31,9 +31,10 @@
       transition: all 0.3s ease;
       display: flex; 
       min-height: 100vh;
+      align-items: flex-start;
     }
 
-    /* Sol Panel */
+    /* Sol Panel (Scroll ile beraber inen yapı) */
     .left-panel {
       width: 35%; 
       background-color: var(--panel-bg);
@@ -43,20 +44,27 @@
       align-items: center;
       text-align: center;
       transition: background-color 0.3s ease;
+      
+      /* Sticky (Yapışkan) Ayarları */
+      position: -webkit-sticky; 
+      position: sticky;
+      top: 0;                   
+      height: 100vh;            
+      box-sizing: border-box;
+      overflow-y: auto;         
     }
 
     /* Sağ Ana İçerik Alanı */
     .right-content {
       width: 65%; 
       padding: 60px 50px;
-      overflow-y: auto; 
     }
 
-    /* Başlıklar (h1 artık isminiz için kullanılmadığından sadece h2 kaldı) */
+    /* GÜNCELLENEN BAŞLIKLAR (İsminizle aynı temiz fonta çekildi) */
     h2 {
       color: var(--accent);
       transition: color 0.3s ease;
-      font-family: 'Garamond', 'Georgia', serif;
+      font-family: 'Calibri', 'Segoe UI', sans-serif; /* İsminizle aynı font yapıldı */
       font-weight: 700;
       margin-top: 40px;
       font-size: 1.8rem;
@@ -69,9 +77,9 @@
       color: var(--accent-dark);
     }
 
-    /* SOL PANEL İSİM VE ALT SATIRLARIN ORTAK DÜZENİ */
+    /* Sol Panel İsim ve Alt Satırlar */
     .left-panel h1 {
-      font-family: 'Calibri', 'Segoe UI', sans-serif; /* Sağ taraftaki gibi düz ve temiz font */
+      font-family: 'Calibri', 'Segoe UI', sans-serif; 
       font-weight: 700;
       font-size: 2.4rem;
       color: var(--accent);
@@ -84,26 +92,25 @@
       color: var(--accent-dark);
     }
 
-    /* İki satırlık alan için kompakt sarmalayıcı */
     .highlight-container {
       display: flex;
       flex-direction: column;
-      gap: 4px;              /* İki satır arasındaki dikey boşluğu dar tutar */
+      gap: 4px;              
       margin-bottom: 20px;
     }
 
     .highlight-text {
-      color: var(--accent);  /* İsmizle tamamen aynı renkte (Light Mode) */
-      font-weight: bold;     /* İstediğiniz gibi tam bold yapıldı */
-      font-family: 'Calibri', 'Segoe UI', sans-serif; /* Sağ tarafla aynı düz okunabilir font */
+      color: var(--accent);  
+      font-weight: bold;     
+      font-family: 'Calibri', 'Segoe UI', sans-serif; 
       font-size: 1.1rem;
-      margin: 0;             /* Gereksiz boşlukları engeller */
-      line-height: 1.3;      /* Satırları birbirine yakın tutar */
+      margin: 0;             
+      line-height: 1.3;      
       transition: color 0.3s ease;
     }
   
     .dark-mode .highlight-text {
-      color: var(--accent-dark);  /* İsmizle tamamen aynı renkte (Dark Mode) */
+      color: var(--accent-dark);  
     }
 
     .dark-mode h2 {
@@ -115,20 +122,21 @@
     }
 
     ul {
-      list-style-type: none; /* Noktaları siler */
-      padding-left: 0;       /* Soldaki girintiyi sıfırlar */
+      list-style-type: none; 
+      padding-left: 0;       
     }
 
     li {
       margin-bottom: 8px;
-      .right-content strong {
-          color: var(--accent);
-          transition: color 0.3s ease;
-        }
-        
-        .dark-mode .right-content strong {
-          color: var(--accent-dark);
-        }
+    }
+    
+    .right-content strong {
+      color: var(--accent);
+      transition: color 0.3s ease;
+    }
+    
+    .dark-mode .right-content strong {
+      color: var(--accent-dark);
     }
 
     a {
@@ -156,7 +164,7 @@
       font-weight: 500;
     }
 
-    /* Dark Mode Sınıf Değişimleri */
+    /* Dark Mode Değişimleri */
     .dark-mode {
       background-color: var(--bg-dark);
       color: var(--text-dark);
@@ -216,7 +224,7 @@
       transform: scale(1.05);
     }
 
-    /* YENİ NESİL CAM EFEKTLİ KAPSÜL BUTONLAR (GÖRSELDEKİ UI MODELİ) */
+    /* Cam Efektli Kapsül Butonlar */
     .contact-info {
       margin-top: 25px;
       display: flex;
@@ -230,16 +238,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: rgba(0, 0, 0, 0.04); /* Soft transparan cam efekti */
+      background-color: rgba(0, 0, 0, 0.04); 
       color: var(--text-light) !important;
       padding: 10px 20px;
-      border-radius: 50px;                   /* Tam oval kapsül yapısı */
-      border: 1px solid rgba(0, 0, 0, 0.15); /* İnce şık dış çerçeve çizgisi */
+      border-radius: 50px;                   
+      border: 1px solid rgba(0, 0, 0, 0.15); 
       font-family: 'Calibri', sans-serif;
       font-size: 0.95rem;
       font-weight: 600;
       text-decoration: none !important;
-      backdrop-filter: blur(4px);            /* Arkadaki renkleri hafif yumuşatır */
+      backdrop-filter: blur(4px);            
       -webkit-backdrop-filter: blur(4px);
       transition: all 0.3s ease;
     }
@@ -251,7 +259,6 @@
       transition: all 0.3s ease;
     }
 
-    /* Buton Hover Durumu (Light Mode) */
     .contact-btn-item:hover {
       background-color: var(--accent);
       color: #FFFFFF !important;
@@ -264,7 +271,6 @@
       opacity: 1;
     }
 
-    /* Butonların Dark Mode Özelleştirmeleri */
     .dark-mode .contact-btn-item {
       background-color: rgba(255, 255, 255, 0.04);
       color: var(--text-dark) !important;
@@ -275,7 +281,6 @@
       color: var(--text-dark);
     }
 
-    /* Buton Hover Durumu (Dark Mode) */
     .dark-mode .contact-btn-item:hover {
       background-color: var(--accent-dark);
       color: #1A1A1A !important;
@@ -320,15 +325,18 @@
       margin-top: 10px;
     }
 
-    /* Mobil Ekranlar İçin Responsive Düzen */
+    /* Responsive Düzen */
     @media (max-width: 768px) {
       body {
         flex-direction: column; 
+        align-items: stretch;
       }
       .left-panel {
         width: 100%;
         padding: 40px 20px;
         box-sizing: border-box;
+        position: static; 
+        height: auto;
       }
       .right-content {
         width: 100%;
@@ -336,7 +344,6 @@
         box-sizing: border-box;
       }
     }
-    
   </style>
 
   <link
@@ -398,7 +405,9 @@
         <p>I am a hybrid <strong>Business Analyst & QA Engineer</strong> with over 3 years of experience delivering software products from requirement elicitation to release within large-scale, cross-functional Agile teams.</p>
         <p>I have leveraged deep product expertise for mobile and web apps to guide strategic decision-making and have acted as a primary liaison between stakeholders and technical teams. I have a proven track record in reducing defect rates and accelerating delivery cycles through high-impact and detail-oriented analysis and testing.</p> 
         <p>I am passionate about pattern recognition in system behaviors, optimizing software lifecycles, and bridging the gap between business vision and product quality. Continuously exploring AI-driven QA methodologies and agentic business analysis to reduce cognitive load and accelerate continuous delivery.</p>
-      <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;"> <p><strong>Location:</strong> Based in Gdynia (Tricity), work permit (Karta Pobytu) granted in Poland.</p>
+      <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;"> 
+      
+      <p><strong>Location:</strong> Based in Gdynia (Tricity), work permit (Karta Pobytu) granted in Poland.</p>
       <p><strong>Languages:</strong> English (C1), Turkish (Native)</p>
       <p><strong>Education:</strong> Bilkent University, B.Sc. in Industrial Engineering (Sep 2015 – Jun 2020)</p>
     </div>
