@@ -216,64 +216,71 @@
       transform: scale(1.05);
     }
 
-    /* KİBARLAŞTIRILMIŞ OVAL İÇİ DOLGULU BUTON TASARIMLARI */
+    /* YENİ NESİL CAM EFEKTLİ KAPSÜL BUTONLAR (GÖRSELDEKİ UI MODELİ) */
     .contact-info {
       margin-top: 25px;
       display: flex;
       flex-direction: column;
-      gap: 10px;                /* Dikey boşluk hafif daraltıldı */
+      gap: 12px;
       width: 100%;
-      max-width: 280px;         /* Buton genişliği kibarlaştırmak için azaltıldı */
+      max-width: 290px;
     }
 
     .contact-btn-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: var(--tag-bg-light);
+      background-color: rgba(0, 0, 0, 0.04); /* Soft transparan cam efekti */
       color: var(--text-light) !important;
-      padding: 9px 16px;        /* İç boşluklar azaltılarak butonlar küçültüldü */
-      border-radius: 10px;       /* Oval köşe oranı buton boyutuyla dengelendi */
+      padding: 10px 20px;
+      border-radius: 50px;                   /* Tam oval kapsül yapısı */
+      border: 1px solid rgba(0, 0, 0, 0.15); /* İnce şık dış çerçeve çizgisi */
       font-family: 'Calibri', sans-serif;
-      font-size: 0.95rem;       /* Yazı boyutu daha kibar bir görünüme çekildi */
+      font-size: 0.95rem;
       font-weight: 600;
       text-decoration: none !important;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      backdrop-filter: blur(4px);            /* Arkadaki renkleri hafif yumuşatır */
+      -webkit-backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
     }
 
     .contact-btn-item i {
-      font-size: 0.95rem;       /* İkonlar yazı boyutuyla eşitlendi */
-      color: var(--accent);
-      transition: color 0.3s ease;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      opacity: 0.8;
+      transition: all 0.3s ease;
     }
 
     /* Buton Hover Durumu (Light Mode) */
     .contact-btn-item:hover {
       background-color: var(--accent);
       color: #FFFFFF !important;
-      transform: translateY(-1.5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(137, 49, 41, 0.2);
     }
 
     .contact-btn-item:hover i {
       color: #FFFFFF;
+      opacity: 1;
     }
 
     /* Butonların Dark Mode Özelleştirmeleri */
     .dark-mode .contact-btn-item {
-      background-color: var(--tag-bg-dark);
+      background-color: rgba(255, 255, 255, 0.04);
       color: var(--text-dark) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .dark-mode .contact-btn-item i {
-      color: var(--accent-dark);
+      color: var(--text-dark);
     }
 
     /* Buton Hover Durumu (Dark Mode) */
     .dark-mode .contact-btn-item:hover {
       background-color: var(--accent-dark);
       color: #1A1A1A !important;
+      border-color: var(--accent-dark);
+      box-shadow: 0 4px 12px rgba(99, 107, 47, 0.3);
     }
 
     .dark-mode .contact-btn-item:hover i {
@@ -391,9 +398,7 @@
         <p>I am a hybrid <strong>Business Analyst & QA Engineer</strong> with over 3 years of experience delivering software products from requirement elicitation to release within large-scale, cross-functional Agile teams.</p>
         <p>I have leveraged deep product expertise for mobile and web apps to guide strategic decision-making and have acted as a primary liaison between stakeholders and technical teams. I have a proven track record in reducing defect rates and accelerating delivery cycles through high-impact and detail-oriented analysis and testing.</p> 
         <p>I am passionate about pattern recognition in system behaviors, optimizing software lifecycles, and bridging the gap between business vision and product quality. Continuously exploring AI-driven QA methodologies and agentic business analysis to reduce cognitive load and accelerate continuous delivery.</p>
-      <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;"> <!-- separator -->
-      
-      <p><strong>Location:</strong> Based in Gdynia (Tricity), work permit (Karta Pobytu) granted in Poland.</p>
+      <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;"> <p><strong>Location:</strong> Based in Gdynia (Tricity), work permit (Karta Pobytu) granted in Poland.</p>
       <p><strong>Languages:</strong> English (C1), Turkish (Native)</p>
       <p><strong>Education:</strong> Bilkent University, B.Sc. in Industrial Engineering (Sep 2015 – Jun 2020)</p>
     </div>
