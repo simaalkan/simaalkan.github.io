@@ -6,39 +6,64 @@
   <title>Sima Alkan Suğur | BA & QA Engineer</title>
   <style>
     :root {
-      --bg-light: #fefefe;
-      --text-light: #2e2e2e;
+      /* Light Mode Renkleri - Referans görselden esinlenildi */
+      --bg-light: #F2E9E1; /* Açık Bej */
+      --text-light: #4A4A4A; /* Koyu Gri */
+      --bg-panel-light: #E0D3C3; /* Hafif koyu bej panel */
+      --accent: #5D4037; /* Koyu kahverengi/bej */
+      --tag-bg-light: #D7CCC8;
+      
+      /* Dark Mode Renkleri */
       --bg-dark: #2d2d2d;
       --text-dark: #f5f5f5;
-      --accent: #003366;        /* Light mode header color */
-      --accent-dark: #4dabf7;   /* Dark mode header color */
-      --tag-bg-light: #e6e6fa;
+      --accent-dark: #4dabf7;
       --tag-bg-dark: #4b4b4b;
+      --bg-panel-dark: #3a3a3a;
 
-      --header-bg: rgba(0, 51, 102, 0.07);          /* Light mode header background */
-      --header-bg-dark: rgba(255, 255, 255, 0.05);  /* Dark mode header background */
-      --header-text: #6a3d8c;
+      /* Header Arka Planı (Şimdi sol panel oldu) */
+      --panel-bg: var(--bg-panel-light);
+      --panel-bg-dark: var(--bg-panel-dark);
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', 'Playfair Display', serif; /* Serif yazı tipi eklendi */
       margin: 0;
-      padding: 40px 20px;
       background-color: var(--bg-light);
       color: var(--text-light);
       line-height: 1.6;
       transition: all 0.3s ease;
+      display: flex; /* Flexbox ile sütun düzeni */
+      min-height: 100vh;
     }
 
-    /* Sayfayı Ortalayan ve Okumayı Kolaylaştıran Yeni Kapsayıcı */
+    /* Sol Panel */
+    .left-panel {
+      width: 35%; /* Sol panelin genişliği */
+      background-color: var(--panel-bg);
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Sağ Ana İçerik Alanı */
+    .right-content {
+      width: 65%; /* Sağ alanın genişliği */
+      padding: 60px 50px;
+      overflow-y: auto; /* Gerektiğinde kaydırma çubuğu */
+    }
+
+    /* Kapsayıcı (Gerekirse) */
     .container {
-      max-width: 900px;
-      margin: 0 auto;
+      /* max-width kaldırıldı, çünkü tüm ekranı kullanıyoruz */
     }
 
-    h1, h2, a {
+    h1, h2 {
       color: var(--accent);
       transition: color 0.3s ease;
+      font-family: 'Playfair Display', serif; /* Başlıklar için serif */
     }
 
     .dark-mode h1,
@@ -48,11 +73,20 @@
     }
 
     h1 {
-      margin-bottom: 0;
+      font-size: 2.5rem;
+      margin-top: 20px;
+      margin-bottom: 5px;
     }
 
     h2 {
       margin-top: 40px;
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-top: 5px;
+      margin-bottom: 20px;
     }
 
     ul {
@@ -87,6 +121,10 @@
       color: var(--text-dark);
     }
 
+    .dark-mode .left-panel {
+      background-color: var(--panel-bg-dark);
+    }
+
     .dark-mode .tools span {
       background: var(--tag-bg-dark);
       color: var(--text-dark);
@@ -111,17 +149,15 @@
       background: #8e44ad;
     }
 
-    /* Profile Pic */
+    /* Sol Panel İçerikleri */
     .profile-top {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .profile-pic-large {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
+      width: 180px; /* Biraz büyütüldü */
+      height: 180px;
+      border-radius: 50%; /* Yuvarlak pencere */
       border: 4px solid var(--accent);
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
       object-fit: cover;
@@ -133,17 +169,23 @@
       transform: scale(1.05);
     }
 
-    /* Social Links */
+    .contact-info {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
     .social-links {
       display: flex;
       justify-content: center;
       gap: 25px;
-      margin-top: 20px;
+      margin-top: 30px;
     }
     
     .social-links a {
       color: var(--accent);
-      font-size: 32px; /* İkonlar biraz daha belirgin yapıldı */
+      font-size: 32px; 
       transition: transform 0.2s ease, color 0.3s ease;
       display: inline-flex;
       align-items: center;
@@ -152,7 +194,7 @@
     
     .social-links a:hover {
       color: #001f3f;
-      transform: translateY(-3px); /* Şık bir havada asılı kalma efekti */
+      transform: translateY(-3px); 
     }
     
     .dark-mode .social-links a {
@@ -172,29 +214,30 @@
       color: white;
     }
 
-    /* Header Area */
-    header.intro-header {
-      background-color: var(--header-bg);
-      color: var(--header-text);
-      text-align: center;
-      padding: 40px 20px;
-      border-radius: 15px;
-      margin-bottom: 40px;
-      box-shadow: 0 3px 8px rgba(155, 89, 182, 0.2);
-      transition: background-color 0.3s ease;
-    }
-
-    .dark-mode header.intro-header {
-      background-color: var(--header-bg-dark);
-    }
-
-    header.intro-header p {
-      margin: 6px 0;
+    /* Sağ Panel İçerikleri İçin Stil */
+    .about-me-text {
       font-size: 1.1rem;
+      margin-top: 10px;
+    }
+
+    /* Mobil Uyumluluk */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column; /* Sütunları alt alta getir */
+      }
+      .left-panel {
+        width: 100%;
+        padding: 40px 20px;
+      }
+      .right-content {
+        width: 100%;
+        padding: 40px 20px;
+      }
     }
     
   </style>
 
+  <!-- Font Awesome CDN -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -203,35 +246,51 @@
     referencepolicy="no-referrer"
   />
   
+  <!-- Serif Yazı Tipi -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
   
 <body class="dark-mode">
   <button class="theme-toggle" onclick="toggleTheme()" id="themeToggleBtn">☀️ Light Mode</button>
   
-  <div class="container">
+  <!-- Sol Panel -->
+  <div class="left-panel">
+    <div class="profile-top">
+      <img src="https://github.com/simaalkan.png" alt="Sima Alkan Profile" class="profile-pic-large" />
+    </div>
+    <h1>Sima Alkan Suğur</h1>
+    <p class="highlight-text">Business Analyst & QA Engineer | 3+ Years of Experience | Web & Mobile Apps</p>
+    
+    <div class="contact-info">
+      <a href="mailto:simaalkan@gmail.com">simaalkan@gmail.com</a>
+      <a href="https://linkedin.com/in/sima-alkan" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/sima-alkan/</a>
+      <a href="https://medium.com/@simaalkan" target="_blank" rel="noopener noreferrer">https://medium.com/@simaalkan</a>
+      <a href="https://github.com/simaalkan" target="_blank" rel="noopener noreferrer">https://github.com/simaalkan</a>
+    </div>
 
-    <header class="intro-header" aria-label="Introduction and social links">
-      <div class="profile-top">
-        <img src="https://github.com/simaalkan.png" alt="Sima Alkan Profile" class="profile-pic-large" />
-      </div>
-      <h1>Sima Alkan Suğur</h1>
-      <p class="highlight-text">Business Analyst & QA Engineer | 3+ Years of Experience | Web & Mobile Apps</p>
-      
-      <div class="social-links" role="navigation" aria-label="Social media links">
-        <a href="https://github.com/simaalkan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/sima-alkan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="mailto:simaalkan@gmail.com" aria-label="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://medium.com/@simaalkan" target="_blank" rel="noopener noreferrer" aria-label="Medium">
-          <i class="fab fa-medium"></i>
-        </a>
-      </div>
-    </header>
+    <div class="social-links" role="navigation" aria-label="Social media links">
+      <a href="https://github.com/simaalkan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/sima-alkan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:simaalkan@gmail.com" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://medium.com/@simaalkan" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+        <i class="fab fa-medium"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Sağ Ana İçerik Alanı -->
+  <div class="right-content">
+    <h2>➤ About Me</h2>
+    <div class="about-me-text">
+        <p>I am a detail-oriented Business Analyst and Quality Assurance Engineer with over 3 years of experience in the software industry. I specialize in bridging the gap between technical teams and business stakeholders, ensuring that software products meet both user needs and technical requirements.</p>
+        <p>My dual expertise allows me to analyze complex business needs and transform them into clear functional specifications, while also developing comprehensive test plans to guarantee product quality. I am passionate about improving software development processes and delivering exceptional user experiences.</p>
+    </div>
 
     <h2>➤ Work Permit Granted in Poland · Karta Pobytu </h2>
     <ul class="core-skills">
@@ -285,8 +344,9 @@
       <span>LogMeIn</span><span>Kibana (Elasticsearch)</span>
       <span>VS Code</span><span>Eclipse IDE</span><span>IntelliJ IDEA</span>
     </div>
+  </div>
 
-  </div> <script>
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
       const isDark = localStorage.getItem("theme") === "dark" || !localStorage.getItem("theme");
       const btn = document.getElementById("themeToggleBtn");
