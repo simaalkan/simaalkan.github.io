@@ -216,14 +216,14 @@
       transform: scale(1.05);
     }
 
-    /* YENİ OVAL İÇİ DOLGULU BUTON TASARIMLARI (UX GELİŞTİRME) */
+    /* KİBARLAŞTIRILMIŞ OVAL İÇİ DOLGULU BUTON TASARIMLARI */
     .contact-info {
-      margin-top: 30px;
+      margin-top: 25px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;                /* Dikey boşluk hafif daraltıldı */
       width: 100%;
-      max-width: 320px; /* Panelde çok yayılmaması için */
+      max-width: 280px;         /* Buton genişliği kibarlaştırmak için azaltıldı */
     }
 
     .contact-btn-item {
@@ -232,18 +232,18 @@
       align-items: center;
       background-color: var(--tag-bg-light);
       color: var(--text-light) !important;
-      padding: 12px 20px;
-      border-radius: 12px; /* Şık oval köşeler */
+      padding: 9px 16px;        /* İç boşluklar azaltılarak butonlar küçültüldü */
+      border-radius: 10px;       /* Oval köşe oranı buton boyutuyla dengelendi */
       font-family: 'Calibri', sans-serif;
-      font-size: 1.05rem;
+      font-size: 0.95rem;       /* Yazı boyutu daha kibar bir görünüme çekildi */
       font-weight: 600;
       text-decoration: none !important;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     .contact-btn-item i {
-      font-size: 1.1rem;
+      font-size: 0.95rem;       /* İkonlar yazı boyutuyla eşitlendi */
       color: var(--accent);
       transition: color 0.3s ease;
     }
@@ -252,8 +252,8 @@
     .contact-btn-item:hover {
       background-color: var(--accent);
       color: #FFFFFF !important;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transform: translateY(-1.5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
     }
 
     .contact-btn-item:hover i {
@@ -351,8 +351,7 @@
     <h1>Sima Alkan Suğur</h1>
     
     <div class="highlight-container">
-      <p class="highlight-text">Business Analyst & QA Engineer | Web & Mobile Apps</p>
-      <p class="highlight-text">Languages: C1 English, Native Turkish</p>
+      <p class="highlight-text">Business Analyst | QA Engineer</p>
     </div>
     
     <div class="contact-info">
@@ -390,7 +389,7 @@
     <h2>➤ Summary </h2>
     <div class="about-me-text">
         <p>I am a hybrid <strong>Business Analyst & QA Engineer</strong> with over 3 years of experience driving the SDLC and STLC from requirement elicitation to release within large-scale, cross-functional Agile teams.</p>
-        <p>I have leveraged deep product expertise to guide strategic decision-making and have acted as a primary liaison between stakeholders and technical teams. I have a proven track record in reducing defect rates and accelerating delivery cycles through high-impact and detail-oriented analysis and testing.</p> 
+        <p>I have leveraged deep product expertise for mobile and web apps to guide strategic decision-making and have acted as a primary liaison between stakeholders and technical teams. I have a proven track record in reducing defect rates and accelerating delivery cycles through high-impact and detail-oriented analysis and testing.</p> 
         <p>I am passionate about pattern recognition in system behaviors, optimizing software lifecycles, and bridging the gap between business vision and product quality.</p>
     </div>
 
