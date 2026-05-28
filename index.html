@@ -10,18 +10,16 @@
       --bg-light: #F2E9E1; 
       --text-light: #4A4A4A; 
       --bg-panel-light: #E0D3C3; 
-      --accent: #80461B;  /* Başlıkların tonu */
+      --accent: #80461B;  /* Başlıkların ve Light Mode isim/alt satırların kahverengi tonu */
       --tag-bg-light: #D7CCC8;
       --panel-bg: var(--bg-panel-light);
-      --olive-green-light: #636B2F; /* Light mod için şık zeytin yeşili */
       
       /* Dark Mode Renkleri */
       --bg-dark: #1A1A1A;          /* Kömür karası arka plan */
       --text-dark: #EAE3D2;         /* Krem rengi soft yazılar */
       --bg-panel-dark: #242424;     /* Bir ton açık panel rengi */
-      --accent-dark: #636B2F;       /* Başlıkların tonu, olive green */
+      --accent-dark: #636B2F;       /* Başlıkların ve Dark Mode isim/alt satırların yeşil tonu */
       --tag-bg-dark: #333333;       /* Yetenek butonları için koyu gri */
-      --olive-green-dark: #A9BA9D;  /* Dark mod için göz yormayan açık zeytin yeşili */
     }
 
     body {
@@ -71,7 +69,7 @@
       color: var(--accent-dark);
     }
 
-    /* SOL PANEL YENİ FONT VE DÜZEN KURALLARI */
+    /* SOL PANEL İSİM VE ALT SATIRLARIN ORTAK DÜZENİ */
     .left-panel h1 {
       font-family: 'Calibri', 'Segoe UI', sans-serif; /* Sağ taraftaki gibi düz ve temiz font */
       font-weight: 700;
@@ -86,25 +84,26 @@
       color: var(--accent-dark);
     }
 
-    /* İki satırlık alt başlık alanı için kompakt sarmalayıcı */
+    /* İki satırlık alan için kompakt sarmalayıcı */
     .highlight-container {
       display: flex;
       flex-direction: column;
-      gap: 5px;              /* İki satır arasındaki dikey boşluğu daraltır */
+      gap: 4px;              /* İki satır arasındaki dikey boşluğu dar tutar */
       margin-bottom: 20px;
     }
 
     .highlight-text {
-      color: var(--olive-green-light); /* Belirttiğiniz Olive Green tonu */
-      font-weight: 500;                 /* Kaba siyah bold görüntüyü kaldıran şık kalınlık */
+      color: var(--accent);  /* İsmizle tamamen aynı renkte (Light Mode) */
+      font-weight: bold;     /* İstediğiniz gibi tam bold yapıldı */
       font-family: 'Calibri', 'Segoe UI', sans-serif; /* Sağ tarafla aynı düz okunabilir font */
       font-size: 1.1rem;
-      margin: 0;                        /* Varsayılan paragraf boşluklarını sıfırlar */
-      line-height: 1.3;                 /* Satır yüksekliğini kompakt hale getirir */
+      margin: 0;             /* Gereksiz boşlukları engeller */
+      line-height: 1.3;      /* Satırları birbirine yakın tutar */
+      transition: color 0.3s ease;
     }
   
     .dark-mode .highlight-text {
-      color: var(--olive-green-dark);  /* Koyu modda parlamayan, soft zeytin tonu */
+      color: var(--accent-dark);  /* İsmizle tamamen aynı renkte (Dark Mode) */
     }
 
     .dark-mode h2 {
@@ -286,7 +285,7 @@
     </div>
     <h1>Sima Alkan Suğur</h1>
     
-    <!-- YENİ DÜZ FONT VE KOMPAKT ZEYTİN YEŞİLİ ALAN -->
+    <!-- AYNI RENKTE, BOLD VE KOMPAKT ALT BAŞLIKLAR -->
     <div class="highlight-container">
       <p class="highlight-text">Business Analyst & QA Engineer | Web & Mobile Apps</p>
       <p class="highlight-text">Languages: C1 English, Native Turkish</p>
