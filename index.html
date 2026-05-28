@@ -10,7 +10,7 @@
       --bg-light: #F2E9E1; 
       --text-light: #4A4A4A; 
       --bg-panel-light: #E0D3C3; 
-      --accent: #80461B;  /* Başlıkların ve Light Mode isim/alt satırların kahverengi tonu */
+      --accent: #893129;  /* Başlıkların ve Light Mode isim/alt satırların kahverengi tonu #80461B */
       --tag-bg-light: #D7CCC8;
       --panel-bg: var(--bg-panel-light);
       
@@ -121,6 +121,14 @@
 
     li {
       margin-bottom: 8px;
+      .right-content strong {
+          color: var(--accent);
+          transition: color 0.3s ease;
+        }
+        
+        .dark-mode .right-content strong {
+          color: var(--accent-dark);
+        }
     }
 
     a {
