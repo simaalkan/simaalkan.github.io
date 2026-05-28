@@ -13,6 +13,7 @@
       --accent: #80461B;  /* Başlıkların tonu */
       --tag-bg-light: #D7CCC8;
       --panel-bg: var(--bg-panel-light);
+      --olive-green-light: #636B2F; /* Light mod için şık zeytin yeşili */
       
       /* Dark Mode Renkleri */
       --bg-dark: #1A1A1A;          /* Kömür karası arka plan */
@@ -20,6 +21,7 @@
       --bg-panel-dark: #242424;     /* Bir ton açık panel rengi */
       --accent-dark: #636B2F;       /* Başlıkların tonu, olive green */
       --tag-bg-dark: #333333;       /* Yetenek butonları için koyu gri */
+      --olive-green-dark: #A9BA9D;  /* Dark mod için göz yormayan açık zeytin yeşili */
     }
 
     body {
@@ -52,31 +54,57 @@
       overflow-y: auto; 
     }
 
-    /* Başlıklar için Garamond Fontu (Süslü olmayan, net serif) */
-    h1, h2 {
+    /* Başlıklar (h1 artık isminiz için kullanılmadığından sadece h2 kaldı) */
+    h2 {
       color: var(--accent);
       transition: color 0.3s ease;
       font-family: 'Garamond', 'Georgia', serif;
       font-weight: 700;
+      margin-top: 40px;
+      font-size: 1.8rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 8px;
     }
 
-    .dark-mode h1,
     .dark-mode h2,
     .dark-mode a {
       color: var(--accent-dark);
     }
 
-    h1 {
-      font-size: 2.5rem;
+    /* SOL PANEL YENİ FONT VE DÜZEN KURALLARI */
+    .left-panel h1 {
+      font-family: 'Calibri', 'Segoe UI', sans-serif; /* Sağ taraftaki gibi düz ve temiz font */
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: var(--accent);
       margin-top: 20px;
-      margin-bottom: 5px;
+      margin-bottom: 12px;
+      transition: color 0.3s ease;
     }
 
-    h2 {
-      margin-top: 40px;
-      font-size: 1.8rem;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      padding-bottom: 8px;
+    .dark-mode .left-panel h1 {
+      color: var(--accent-dark);
+    }
+
+    /* İki satırlık alt başlık alanı için kompakt sarmalayıcı */
+    .highlight-container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;              /* İki satır arasındaki dikey boşluğu daraltır */
+      margin-bottom: 20px;
+    }
+
+    .highlight-text {
+      color: var(--olive-green-light); /* Belirttiğiniz Olive Green tonu */
+      font-weight: 500;                 /* Kaba siyah bold görüntüyü kaldıran şık kalınlık */
+      font-family: 'Calibri', 'Segoe UI', sans-serif; /* Sağ tarafla aynı düz okunabilir font */
+      font-size: 1.1rem;
+      margin: 0;                        /* Varsayılan paragraf boşluklarını sıfırlar */
+      line-height: 1.3;                 /* Satır yüksekliğini kompakt hale getirir */
+    }
+  
+    .dark-mode .highlight-text {
+      color: var(--olive-green-dark);  /* Koyu modda parlamayan, soft zeytin tonu */
     }
 
     .dark-mode h2 {
@@ -88,7 +116,6 @@
     }
 
     ul {
-      padding-left: 20px;
       list-style-type: none; /* Noktaları siler */
       padding-left: 0;       /* Soldaki girintiyi sıfırlar */
     }
@@ -216,17 +243,6 @@
     .dark-mode .social-links a:hover {
       color: var(--accent-dark);
     }
-  
-    .highlight-text {
-      color: #000000;
-      font-weight: bold;
-      font-family: 'Garamond', serif;
-      font-size: 1.2rem;
-    }
-  
-    .dark-mode .highlight-text {
-      color: var(--accent-dark);
-    }
 
     .about-me-text {
       font-size: 1.1rem;
@@ -269,8 +285,12 @@
       <img src="https://github.com/simaalkan.png" alt="Sima Alkan Profile" class="profile-pic-large" />
     </div>
     <h1>Sima Alkan Suğur</h1>
-    <p class="highlight-text">Business Analyst & QA Engineer | Web & Mobile Apps</p>
-    <p class="highlight-text">Languages: C1 English, Native Turkish</p>
+    
+    <!-- YENİ DÜZ FONT VE KOMPAKT ZEYTİN YEŞİLİ ALAN -->
+    <div class="highlight-container">
+      <p class="highlight-text">Business Analyst & QA Engineer | Web & Mobile Apps</p>
+      <p class="highlight-text">Languages: C1 English, Native Turkish</p>
+    </div>
     
     <div class="contact-info">
       <a href="mailto:simaalkan@gmail.com">simaalkan@gmail.com</a>
@@ -298,9 +318,9 @@
   <div class="right-content">
     <h2>➤ Summary </h2>
     <div class="about-me-text">
-        <p>I am a hybrid <strong>Business Analyst & QA Engineer</strong> with over 3 years of experience. Adept at navigating BA, QA, and SM responsibilities, driving the SDLC and STLC from requirement elicitation to release within large-scale, cross-functional Agile teams.</p>
-        <p>Leveraged deep product expertise to guide strategic decision-making, acted as a primary liaison between stakeholders and technical teams. Proven expertise in reducing defect rates and accelerating delivery cycles with high- impact and detail-oriented analysis and testing.</p> 
-        <p>My dual expertise allows me to seamlessly translate complex stakeholder requirements into precise technical specifications while simultaneously architecting end-to-end testing frameworks. Passionate about pattern recognition in system behaviors, optimizing software lifecycles, and bridging the gap between business vision and product quality.</p>
+        <p>I am a hybrid <strong>Business Analyst & QA Engineer</strong> with over 3 years of experience driving the SDLC and STLC from requirement elicitation to release within large-scale, cross-functional Agile teams.</p>
+        <p>I have leveraged deep product expertise to guide strategic decision-making and have acted as a primary liaison between stakeholders and technical teams. I have a proven track record in reducing defect rates and accelerating delivery cycles through high-impact and detail-oriented analysis and testing.</p> 
+        <p>I am passionate about pattern recognition in system behaviors, optimizing software lifecycles, and bridging the gap between business vision and product quality.</p>
     </div>
 
     <h2>➤ Current Status </h2>
